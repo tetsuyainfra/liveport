@@ -1,5 +1,5 @@
 import SofTalk from "./SofTalk"
-import WebspeechApi from "./WebspeechApi"
+import WebspeechApi from "./WebSpeechApi"
 import Tamiyasu from "./Tamiyasu"
 import Bouyomi from "./Bouyomi"
 import { VOICE, VoiceParameter } from "./Voice"
