@@ -8,6 +8,7 @@ import StringUtil from "./StringUtil";
 import Logger from "./Logger";
 import { Speaker } from "./Speaker"
 import { configure } from "./Configure"
+import VoiceTextApi from "./VoiceTextApi"
 const SystemDictionary = configure.SystemDictionary;
 const NgDictionary: string[] = configure.NgDictionary;
 const port = configure.port
@@ -25,6 +26,7 @@ export default class ProvideManager {
     reading: boolean = true;
     socket: SocketIOClient.Socket;
     port: number = 3000;
+    vtApiKey: string = "";
 
     constructor() { }
 
@@ -121,6 +123,8 @@ export default class ProvideManager {
             this.speaker = new Tamiyasu(path);
         } else if (this.voice === VOICE.BOUYOMI) {
             this.speaker = new Bouyomi(path);
+        } else if (this.voice === VOICE.VOICETEXT) {
+            this.speaker = new VoiceTextApi(this.vtApiKey);
         }
     }
 

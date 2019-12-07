@@ -1,6 +1,6 @@
 "use strict"
 export enum VOICE {
-    WSA = 1, SOFTALK = 2, TAMIYASU = 3, BOUYOMI = 4
+    WSA = 1, SOFTALK = 2, TAMIYASU = 3, BOUYOMI = 4, VOICETEXT = 5,
 }
 const MAX_RATE = 1.8;
 "use strict"

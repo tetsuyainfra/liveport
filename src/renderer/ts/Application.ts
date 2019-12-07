@@ -472,6 +472,7 @@ export default class Application extends Vue {
             + this.pManager.vParam.rate
             + this.pManager.vParam.pitch
             + this.pManager.vParam.use
+            + this.pManager.vtApiKey
             + this.playingNotificationSound
             + this.reload + this.provideTimeLimit + this.pManager.reading
             + this.path + this.pManager.voice
@@ -489,6 +490,7 @@ export default class Application extends Vue {
             rate: this.pManager.vParam.rate,
             pitch: this.pManager.vParam.pitch,
             use: this.pManager.vParam.use,
+            vtApiKey: this.pManager.vtApiKey,
             reload: this.reload,
             provideTimeLimit: this.provideTimeLimit,
             reading: this.pManager.reading,
@@ -553,6 +555,7 @@ export default class Application extends Vue {
         this.pManager.vParam.rate = Number(this.getValueOrDefault(settings.rate, this.pManager.vParam.rate));
         this.pManager.vParam.pitch = Number(this.getValueOrDefault(settings.pitch, this.pManager.vParam.pitch));
         this.pManager.vParam.use = Boolean(this.getValueOrDefault(settings.use, this.pManager.vParam.use));
+        this.pManager.vtApiKey = this.getValueOrDefault(settings.vtApiKey, this.pManager.vtApiKey);
         this.reload = Number(this.getValueOrDefault(settings.reload, this.reload));
         this.reloadTimerCountDown = this.reload;
         this.provideTimeLimit = Number(this.getValueOrDefault(settings.provideTimeLimit, this.provideTimeLimit));
