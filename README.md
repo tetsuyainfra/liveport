@@ -53,3 +53,8 @@ OBS Studioを使用している場合、字幕をOBS Studio内で表示するこ
 
 * ver 1.0.0
   * 初版
+
+
+### TODO
+ * vue用デコレーターをどうするか
+  * Watchの書き方わからんのでメンテされてるVueTypedをvue-property-decoratorに変更
