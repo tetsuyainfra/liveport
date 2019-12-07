@@ -1,12 +1,14 @@
 "use strict";
-import * as Vue from "Vue";
-import { Component } from "vue-typed"
+import Vue from "Vue";
+// import { Component } from "vue-typed"
+import Component from 'vue-class-component'
+
 import * as io from "socket.io-client";
 const MODE = {
     MESSAGE: "message",
     AA: "aa"
 }
-@Component()
+@Component({})
 export default class Browser extends Vue {
     mode: string = MODE.MESSAGE;
     body: string = "字幕表示テスト";

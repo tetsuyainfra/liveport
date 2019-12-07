@@ -1,6 +1,9 @@
 "use strict"
-import * as Vue from "Vue";
-import { Component, Watch } from "vue-typed"
+// import Vue from "Vue";
+// import { Component, Watch } from "vue-typed"
+// import Component from 'vue-class-component'
+import { Component, Watch, Vue } from 'vue-property-decorator';
+
 import { DataSource } from "./DataSource";
 import { Shitaraba } from "./Shitaraba";
 import { CaveTube } from "./CaveTube";
@@ -22,7 +25,7 @@ enum KEY {
     CTRL = 1, SHIFT = 2, NONE = 3
 }
 
-@Component({})
+@Component
 export default class Application extends Vue {
     pManager: ProvideManager;
     testMessage: string = 'このテキストはテストメッセージです';
@@ -407,15 +410,16 @@ export default class Application extends Vue {
     path: string = "";
 
     findSofTalkPathDialog() {
-        remote.dialog.showOpenDialog(remote.getCurrentWindow(), {
-            filters: [
-                { name: 'exe', extensions: ['exe'] }
-            ]
-        }, (paths: string[]) => {
-            if (paths) {
-                this.path = paths[0];
-            }
-        });
+        // TODO: APIが変わった模様
+        // remote.dialog.showOpenDialog(remote.getCurrentWindow(), {
+        //     filters: [
+        //         { name: 'exe', extensions: ['exe'] }
+        //     ]
+        // }, (paths: string[]) => {
+        //     if (paths) {
+        //         this.path = paths[0];
+        //     }
+        // });
     }
 
     initScroll() {
