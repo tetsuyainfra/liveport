@@ -14,8 +14,29 @@ module.exports = merge(common, {
     },
     module: {
         // noParse: ['ws'] //
+        rules: [
+            {
+                test: /\.(woff|woff2|eot|ttf|svg)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]',
+                    outputPath: 'renderer/html'
+                }
+            },
+            // work around
+            // https://github.com/ashtuchkin/iconv-lite/issues/204
+            {
+                test: /node_modules[\/\\](iconv-lite)[\/\\].+/,
+                resolve: {
+                    aliasFields: ['main']
+                }
+            }
+        ],
     },
     // externals: ['ws'], // https://github.com/socketio/socket.io-client/issues/933
+    externals: {
+        // "iconv-lite": "iconv-lite"
+    },
     target: "electron-renderer",
     plugins: [
         new copyWebpackPlugin([{

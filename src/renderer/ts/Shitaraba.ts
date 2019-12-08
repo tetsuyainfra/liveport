@@ -1,6 +1,7 @@
 "use strict"
 import * as rp from "request-promise";
-import * as  iconv from "iconv-lite";
+// import * as  iconv from "iconv-lite";
+const iconv = require("iconv-lite");
 import Message from "./Message";
 import * as encoding from "encoding-japanese";
 import { DataSource, ThreadList } from "./DataSource";
