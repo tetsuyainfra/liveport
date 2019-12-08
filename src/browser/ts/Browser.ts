@@ -1,5 +1,5 @@
 "use strict";
-import Vue from "Vue";
+import Vue from "vue";
 // import { Component } from "vue-typed"
 import Component from 'vue-class-component'
 
