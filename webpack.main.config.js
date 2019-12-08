@@ -6,7 +6,7 @@ const common = require('./webpack.base.js');
 
 module.exports = merge(common, {
     entry: {
-        "main": './src/electron/ts/Main.ts'
+        "index": './src/electron/ts/Main.ts'
     },
     output: {
         path: __dirname + "/build",
