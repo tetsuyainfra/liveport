@@ -24,7 +24,10 @@ class Main {
     onReady() {
         // Create the browser window.
         this.mainWindow = new BrowserWindow({
-            icon: __dirname + '/assets/icon/favicon.png'
+            icon: __dirname + '/assets/icon/favicon.png',
+            webPreferences: {
+                nodeIntegration: true
+            }
         });
         let bounds_info;
         try {
@@ -85,5 +88,5 @@ ipcMain.on("stop-server", (event, arg) => {
 
 const myapp = new Main(app);
 
-const client = require('electron-connect').client;
-client.create(myapp.mainWindow);
+// const client = require('electron-connect').client;
+// client.create(myapp.mainWindow);

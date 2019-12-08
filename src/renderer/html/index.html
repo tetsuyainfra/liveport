@@ -8,7 +8,8 @@
     <!-- build:remove -->
     <!-- Connect to server process -->
     <script>
-        require('electron-connect').client.create()
+        // TODO: 代替方法を探そう
+        // require('electron-connect').client.create()
     </script>
     <!-- endbuild -->
 </head>
@@ -72,7 +73,7 @@
                         </label>
                     </span>
                     <span class="mdl-navigation__link">
-                        <label><i class="material-icons">find_in_page</i> softalk/vrx/RemoteTalkのパス</label>                        
+                        <label><i class="material-icons">find_in_page</i> softalk/vrx/RemoteTalkのパス</label>
                         <div class="mdl-textfield mdl-js-textfield">
                             <input class="mdl-textfield__input"  v-on:click="findSofTalkPathDialog()" id="path" autocomplete="off" v-model="path" v-bind:disabled="processing">
                         </div>
@@ -111,7 +112,7 @@
                     </label>
                     </span>
                     <span class="mdl-navigation__link">
-                        <label><i class="material-icons">record_voice_over</i> 読み上げテスト</label>                        
+                        <label><i class="material-icons">record_voice_over</i> 読み上げテスト</label>
                         <div class="mdl-textfield mdl-js-textfield">
                         <textarea class="mdl-textfield__input" id="m" autocomplete="off" v-model="testMessage"></textarea>
                         <button v-on:click="test('テスト：',testMessage)" v-bind:disabled="processing">send</button>
@@ -141,7 +142,7 @@
                     </label>
                     </span>
                     <span class="mdl-navigation__link">
-                        <label><i v-on:click="clearDataSource()" class="material-icons cursor--hand">info</i> version:{{version}}</label>                  
+                        <label><i v-on:click="clearDataSource()" class="material-icons cursor--hand">info</i> version:{{version}}</label>
                     </span>
                 </nav>
             </div>
@@ -215,7 +216,7 @@
                 オートスクロールOFF
             </div>
             <button class="mdl-button mdl-js-button" disabled>
-                         
+
             </button>
             <button v-on:click="showDummyTextWindow()" id="dummyTextButton" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect">
                  <i class="material-icons">message</i>

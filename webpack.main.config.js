@@ -17,7 +17,7 @@ module.exports = merge(common, {
     },
     // externals: ['ws'], // https://github.com/socketio/socket.io-client/issues/933
     externals: {
-        ws:  'ws',
+        // ws:  'ws',
         uws: 'uws'
     },
     target: "electron-main",
