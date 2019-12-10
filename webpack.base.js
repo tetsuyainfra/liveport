@@ -34,9 +34,9 @@ module.exports = {
                     },
                     {
                         loader: 'less-loader',
-                        options: {
-                            paths: [path.resolve(__dirname, 'node_modules')],
-                        },
+                        // options: {
+                        //     paths: [path.resolve(__dirname, 'node_modules')],
+                        // },
                     },
                 ]
             },

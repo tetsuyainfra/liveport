@@ -19,8 +19,8 @@ module.exports = merge(common, {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[path][name].[ext]',
-                    outputPath: 'renderer/html'
+                    name: '[name].[ext]',
+                    // outputPath: 'renderer/html'
                 }
             },
             // work around
