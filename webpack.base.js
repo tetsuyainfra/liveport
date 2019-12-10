@@ -27,16 +27,16 @@ module.exports = {
                 test: /\.less$/,
                 use: [
                     {
-                      loader: 'style-loader',
+                        loader: 'style-loader',
                     },
                     {
-                      loader: 'css-loader',
+                        loader: 'css-loader',
                     },
                     {
-                      loader: 'less-loader',
-                      options: {
-                        paths: [path.resolve(__dirname, 'node_modules')],
-                      },
+                        loader: 'less-loader',
+                        options: {
+                            paths: [path.resolve(__dirname, 'node_modules')],
+                        },
                     },
                 ]
             },
@@ -44,14 +44,6 @@ module.exports = {
                 test: /\.json$/,
                 type: "javascript/auto",
                 loader: "json-loader"
-            },
-            {
-                test: /\.(woff|woff2|eot|ttf|svg)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[path][name].[ext]',
-                    outputPath: ''
-                }
             },
         ]
     },
