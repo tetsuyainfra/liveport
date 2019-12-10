@@ -6,10 +6,10 @@ const common = require('./webpack.base.js');
 
 module.exports = merge(common, {
     entry: {
-        "renderer/js/app": './src/renderer/entry.ts'
+        "app": './src/renderer/entry.ts'
     },
     output: {
-        path: __dirname + "/build",
+        path: __dirname + "/build/renderer",
         filename: '[name].bundle.js'
     },
     module: {
@@ -19,8 +19,7 @@ module.exports = merge(common, {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]',
-                    // outputPath: 'renderer/html'
+                    name: '[path][name].[ext]',
                 }
             },
             // work around
@@ -39,12 +38,16 @@ module.exports = merge(common, {
     },
     target: "electron-renderer",
     plugins: [
-        new copyWebpackPlugin([{
-            from: './src/renderer/html/index.html',
-            to: "renderer/html/"
-        }], {
-            ignore: []
-        })
+        new copyWebpackPlugin([
+            './src/renderer/html/index.html'
+        ])
+
+        // new copyWebpackPlugin([{
+        //     from: './src/renderer/html/index.html',
+        //     to: "/"
+        // }], {
+        //     ignore: []
+        // })
         // ,        new DashboardPlugin()
     ]
 });

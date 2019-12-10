@@ -6,20 +6,17 @@ const common = require('./webpack.base.js');
 
 module.exports = merge(common, {
     entry: {
-        "browser/js/browser": './src/browser/entry.ts',
+        "browser": './src/browser/entry.ts',
     },
     output: {
-        path: __dirname + "/build",
+        path: __dirname + "/build/browser",
         filename: '[name].bundle.js'
     },
     target: "web",
     plugins: [
-        new copyWebpackPlugin([{
-            from: './src/browser/html/browser.html',
-            to: "browser/html/"
-        }], {
-            ignore: []
-        })
+        new copyWebpackPlugin([
+            './src/browser/html/browser.html'
+        ])
         // ,        new DashboardPlugin()
     ]
 });

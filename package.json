@@ -6,12 +6,13 @@
     "scripts": {
         "watch": "webpack-dashboard -- webpack -d --watch",
         "start": "webpack-dashboard -- webpack-dev-server -d --hot --inline",
+        "electron": "electron build",
         "clean": "rimraf ./build",
         "webpack": "npm-run-all webpack:*",
         "build": "electron-packager . live_gen --platform=win32 --arch=x64 --version=1.4.6 --out ./release",
-        "webpack:main": "webpack --config=webpack.main.config.js",
-        "webpack:browser": "webpack --config=webpack.browser.config.js",
-        "webpack:renderer": "webpack --config=webpack.renderer.config.js"
+        "webpack:main": "webpack --config=webpack.main.config.js -d",
+        "webpack:browser": "webpack --config=webpack.browser.config.js -d",
+        "webpack:renderer": "webpack --config=webpack.renderer.config.js -d"
     },
     "author": "https://github.com/odangosan",
     "license": "ISC",

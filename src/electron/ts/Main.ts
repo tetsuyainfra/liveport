@@ -39,7 +39,7 @@ class Main {
         // disable menubar.
         this.mainWindow.setMenu(null);
         this.mainWindow.loadURL(url.format({
-            pathname: path.join(__dirname, "renderer", "html", 'index.html'),
+            pathname: path.join(__dirname, "renderer", 'index.html'),
             protocol: 'file:',
             slashes: true
         }));
